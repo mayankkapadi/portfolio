@@ -1,6 +1,6 @@
 # Mayank Kapadi Portfolio
 
-Static portfolio website generated from my CV. It highlights my work in physics-informed machine learning, scientific computing, time-series prediction, Unity/VR development, and software engineering.
+Static portfolio website generated from my CV. It highlights my work in data engineering, analytical software, machine learning workflows, Unity/VR development, and software engineering.
 
 ## Run locally
 

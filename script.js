@@ -2,7 +2,27 @@ const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navMenu = document.querySelector("[data-nav-menu]");
 const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
+const themeToggle = document.querySelector("[data-theme-toggle]");
 const yearTarget = document.querySelector("[data-year]");
+const root = document.documentElement;
+
+const applyTheme = (theme, shouldPersist = true) => {
+  root.dataset.theme = theme;
+  themeToggle?.setAttribute(
+    "aria-label",
+    theme === "dark" ? "Switch to light mode" : "Switch to dark mode",
+  );
+
+  if (!shouldPersist) {
+    return;
+  }
+
+  try {
+    localStorage.setItem("theme", theme);
+  } catch {
+    // Ignore storage errors so the toggle still works for the current page.
+  }
+};
 
 const closeMenu = () => {
   navToggle?.setAttribute("aria-expanded", "false");
@@ -25,11 +45,17 @@ navLinks.forEach((link) => {
   link.addEventListener("click", closeMenu);
 });
 
+themeToggle?.addEventListener("click", () => {
+  applyTheme(root.dataset.theme === "dark" ? "light" : "dark");
+});
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     closeMenu();
   }
 });
+
+applyTheme(root.dataset.theme || "light", false);
 
 window.addEventListener("scroll", setHeaderState, { passive: true });
 setHeaderState();

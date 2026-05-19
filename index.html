@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Mayank Kapadi is a data-driven engineer building physics-informed ML models, time-series prediction systems, and immersive software experiences."
+      content="Mayank Kapadi is a data engineering focused software developer building analytical data systems, machine learning workflows, and immersive VR experiences."
     >
-    <title>Mayank Kapadi | Data-Driven Engineer</title>
-    <link rel="preload" href="assets/hero-physics-ml.png" as="image">
+    <title>Mayank Kapadi | Data Engineer</title>
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.dataset.theme = savedTheme || (prefersDark ? "dark" : "light");
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+    <link rel="preload" href="assets/hero-data-engineering.png" as="image">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -21,34 +32,40 @@
           <span>Mayank Kapadi</span>
         </a>
 
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-nav-toggle>
-          <span class="sr-only">Toggle navigation</span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </button>
+        <div class="nav-controls">
+          <div class="nav-links" id="site-menu" data-nav-menu>
+            <a href="#expertise">Expertise</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+          </div>
 
-        <div class="nav-links" id="site-menu" data-nav-menu>
-          <a href="#expertise">Expertise</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
+          <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>
+            <span class="theme-toggle-icon" aria-hidden="true"></span>
+          </button>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-nav-toggle>
+            <span class="sr-only">Toggle navigation</span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
         </div>
       </nav>
     </header>
 
     <main id="main">
       <section class="hero" id="top" aria-label="Introduction">
-        <img class="hero-image" src="assets/hero-physics-ml.png" alt="" aria-hidden="true">
+        <img class="hero-image" src="assets/hero-data-engineering.png" alt="" aria-hidden="true">
         <div class="hero-overlay" aria-hidden="true"></div>
         <div class="hero-content">
-          <p class="eyebrow">Physics-Informed ML | Simulation | Immersive Systems</p>
+          <p class="eyebrow">Data Engineering | Machine Learning | VR Systems</p>
           <h1>Mayank Kapadi</h1>
           <p class="hero-copy">
-            Data-driven engineer building hybrid physics and machine-learning models,
-            advanced time-series prediction systems, and analytical software for
-            complex technical domains.
+            Data engineering focused developer building reliable data workflows,
+            analytical systems, and prediction-ready software, with hands-on
+            experience in machine learning research and immersive VR platforms.
           </p>
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button button-primary" href="#projects">View Projects</a>
@@ -65,47 +82,47 @@
         </div>
         <div class="fact">
           <span class="fact-label">Focus</span>
-          <strong>Hybrid ODE + ANN Models</strong>
-          <span>Inverse dynamics and prediction</span>
+          <strong>Data Engineering and Analytics</strong>
+          <span>Python, SQL, processing, and prediction</span>
         </div>
         <div class="fact">
           <span class="fact-label">Location</span>
-          <strong>Paderborn, Germany</strong>
-          <span>ML, simulation, and software engineering</span>
+          <strong>Mannheim, Germany</strong>
+          <span>Data, ML, and immersive software</span>
         </div>
       </section>
 
       <section class="section" id="expertise">
         <div class="section-heading">
           <p class="eyebrow">What I Build</p>
-          <h2>Reliable software for intelligent technical systems.</h2>
+          <h2>Data systems that turn raw information into useful decisions.</h2>
           <p>
-            I connect scientific computing, machine learning, and practical software
-            engineering to model real-world behavior and turn research ideas into
-            working systems.
+            I combine software engineering, data processing, and machine learning
+            foundations to build systems that collect, structure, analyze, and
+            predict from real-world data.
           </p>
         </div>
 
         <div class="expertise-grid">
           <article class="card">
             <span class="card-icon" aria-hidden="true">01</span>
-            <h3>Physics-Informed ML</h3>
+            <h3>Data Engineering</h3>
             <p>
-              Researching hybrid modeling approaches that combine ordinary
-              differential equations with neural networks for dynamic system modeling.
+              Designing database-backed workflows, processing pipelines, and
+              analytical features with Python, SQL, Pandas, PHP, and JavaScript.
             </p>
           </article>
           <article class="card">
             <span class="card-icon" aria-hidden="true">02</span>
-            <h3>Time-Series Prediction</h3>
+            <h3>Machine Learning</h3>
             <p>
-              Designing experiments, training models, and evaluating predictive
-              performance for mechanical and energy-related systems.
+              Building prediction experiments with PyTorch, NumPy, SciPy, and
+              time-series methods, including physics-informed ML research.
             </p>
           </article>
           <article class="card">
             <span class="card-icon" aria-hidden="true">03</span>
-            <h3>XR and Digital Twins</h3>
+            <h3>VR and Digital Twins</h3>
             <p>
               Building Unity-based interactive environments, VR laboratory workflows,
               and 3D learning experiences with usable interfaces.
@@ -117,7 +134,7 @@
       <section class="section section-contrast" id="experience">
         <div class="section-heading">
           <p class="eyebrow">Experience</p>
-          <h2>Research, engineering, and applied software delivery.</h2>
+          <h2>Data-focused research, software delivery, and immersive systems.</h2>
         </div>
 
         <div class="timeline">
@@ -127,13 +144,13 @@
               <h3>Student Research Assistant</h3>
               <p class="meta">University of Paderborn | Paderborn, Germany</p>
               <p>
-                Conducting research on hybrid modeling techniques that combine ODEs
-                and artificial neural networks for inverse dynamics problems.
+                Developing data-driven prediction workflows for dynamic systems,
+                combining scientific computing, time-series experiments, and ML models.
               </p>
               <ul>
-                <li>Developing physics-informed ML models for mechanical time-series prediction.</li>
-                <li>Implementing experiments with Python, PyTorch, NumPy, SciPy, and Matplotlib.</li>
-                <li>Collaborating with research teams to evaluate system behavior and model quality.</li>
+                <li>Preparing and analyzing experimental data for mechanical time-series prediction.</li>
+                <li>Training physics-informed ML models with Python, PyTorch, NumPy, SciPy, and Matplotlib.</li>
+                <li>Evaluating model quality and documenting results for research collaboration.</li>
               </ul>
             </div>
           </article>
@@ -144,8 +161,8 @@
               <h3>Student Research Assistant</h3>
               <p class="meta">University of Paderborn | Paderborn, Germany</p>
               <p>
-                Contributed to an educational Unity-based teaching platform for
-                interactive learning.
+                Contributed to an educational software platform with interactive
+                Unity modules and supporting backend functionality.
               </p>
               <ul>
                 <li>Designed UI components and interactive modules in C#, Unity3D, and Git.</li>
@@ -161,8 +178,8 @@
               <h3>Software Developer</h3>
               <p class="meta">Ashwamedh Infotech Pvt. Ltd. | Mumbai, India</p>
               <p>
-                Delivered customized enterprise software and supported payroll and
-                database management systems for client environments.
+                Delivered customized enterprise software and database integrations
+                for payroll and operational client environments.
               </p>
               <ul>
                 <li>Integrated database systems with payroll processing platforms.</li>
@@ -177,10 +194,28 @@
       <section class="section" id="projects">
         <div class="section-heading">
           <p class="eyebrow">Selected Projects</p>
-          <h2>Applied work across simulation, VR, and prediction.</h2>
+          <h2>Applied work across data systems, ML, and VR.</h2>
         </div>
 
         <div class="project-grid">
+          <article class="project-card">
+            <div class="project-topline">
+              <span>B.E. Project</span>
+              <span>Data Prediction</span>
+            </div>
+            <h3>Smart Grid Monitoring and Prediction</h3>
+            <p>
+              Designed a smart grid system for monitoring household electricity usage
+              and predicting future consumption using algorithmic forecasting methods.
+            </p>
+            <ul class="tag-list" aria-label="Technologies used">
+              <li>Forecasting</li>
+              <li>Monitoring</li>
+              <li>Data Analysis</li>
+              <li>Systems</li>
+            </ul>
+          </article>
+
           <article class="project-card">
             <div class="project-topline">
               <span>Master's Thesis</span>
@@ -189,8 +224,8 @@
             <h3>Software Architecture Concept for Vehicles</h3>
             <p>
               Developed a software architecture concept for software-intensive
-              vehicles, integrating sensors, V2X communication, security mechanisms,
-              and AI/ML considerations.
+              vehicles, integrating sensor data, V2X communication, security
+              mechanisms, and AI/ML considerations.
             </p>
             <ul class="tag-list" aria-label="Technologies used">
               <li>SysML</li>
@@ -218,43 +253,25 @@
               <li>Python</li>
             </ul>
           </article>
-
-          <article class="project-card">
-            <div class="project-topline">
-              <span>B.E. Project</span>
-              <span>Prediction</span>
-            </div>
-            <h3>Smart Grid Monitoring and Prediction</h3>
-            <p>
-              Designed a smart grid system for monitoring household electricity usage
-              and predicting future consumption using algorithmic forecasting methods.
-            </p>
-            <ul class="tag-list" aria-label="Technologies used">
-              <li>Forecasting</li>
-              <li>Monitoring</li>
-              <li>Data Analysis</li>
-              <li>Systems</li>
-            </ul>
-          </article>
         </div>
       </section>
 
       <section class="section section-split" id="skills">
         <div class="section-heading compact">
           <p class="eyebrow">Skills</p>
-          <h2>Technical stack and working style.</h2>
+          <h2>Data-first stack with ML and immersive software depth.</h2>
         </div>
 
         <div class="skills-panel">
           <div>
-            <h3>Programming and ML</h3>
+            <h3>Data Engineering and ML</h3>
             <ul class="skill-cloud">
               <li>Python</li>
+              <li>SQL</li>
+              <li>Pandas</li>
               <li>PyTorch</li>
               <li>NumPy</li>
               <li>SciPy</li>
-              <li>Pandas</li>
-              <li>SQL</li>
               <li>JavaScript</li>
               <li>PHP</li>
               <li>HTML</li>
@@ -279,6 +296,8 @@
           <div>
             <h3>Strengths</h3>
             <ul class="skill-cloud">
+              <li>Data Processing</li>
+              <li>Analytics</li>
               <li>Scientific Computing</li>
               <li>Documentation</li>
               <li>Version Control</li>
@@ -339,7 +358,7 @@
       <section class="contact-section" id="contact">
         <div>
           <p class="eyebrow">Contact</p>
-          <h2>Let’s build intelligent systems that behave well in the real world.</h2>
+          <h2>Let's build data systems that make complex information useful.</h2>
         </div>
         <div class="contact-actions">
           <a class="button button-primary" href="mailto:mayankkapadi97@gmail.com">Email Me</a>

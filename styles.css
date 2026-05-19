@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   --ink: #102025;
   --ink-strong: #071215;
   --paper: #f7f3ec;
@@ -12,8 +13,35 @@
   --amber-soft: #fff0da;
   --sage: #6c8a70;
   --shadow: 0 24px 60px rgba(13, 38, 42, 0.12);
+  --card-shadow: 0 12px 34px rgba(16, 32, 37, 0.06);
+  --header-bg: rgba(247, 243, 236, 0.96);
+  --header-shadow: 0 12px 30px rgba(16, 32, 37, 0.08);
+  --contact-bg: #102025;
+  --accent-contrast: #071215;
   --radius: 8px;
   --max-width: 1160px;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #e7f2f1;
+  --ink-strong: #f6fbfa;
+  --paper: #071114;
+  --surface: #0d1a1e;
+  --soft: #101f24;
+  --muted: #a5b9ba;
+  --line: #243b41;
+  --teal: #35d8cc;
+  --teal-dark: #7ee9df;
+  --amber: #f0a646;
+  --amber-soft: #2c2418;
+  --sage: #90b996;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+  --card-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
+  --header-bg: rgba(7, 17, 20, 0.94);
+  --header-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+  --contact-bg: #091316;
+  --accent-contrast: #061113;
 }
 
 * {
@@ -32,6 +60,9 @@ body {
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   line-height: 1.6;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
 }
 
 img {
@@ -92,13 +123,14 @@ ul {
 .site-header.is-scrolled,
 .site-header.menu-open {
   border-color: var(--line);
-  background: rgba(247, 243, 236, 0.96);
+  background: var(--header-bg);
   color: var(--ink);
-  box-shadow: 0 12px 30px rgba(16, 32, 37, 0.08);
+  box-shadow: var(--header-shadow);
   backdrop-filter: blur(14px);
 }
 
 .nav {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -125,6 +157,12 @@ ul {
   border: 1px solid currentColor;
   border-radius: 50%;
   font-size: 0.82rem;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .nav-links {
@@ -161,6 +199,61 @@ ul {
 .site-header:not(.is-scrolled):not(.menu-open) .nav-links a.is-active {
   background: rgba(255, 255, 255, 0.12);
   color: #fff;
+}
+
+.theme-toggle {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid currentColor;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.08);
+  color: currentColor;
+  cursor: pointer;
+  opacity: 0.86;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.site-header.is-scrolled .theme-toggle,
+.site-header.menu-open .theme-toggle {
+  background: var(--surface);
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  opacity: 1;
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.theme-toggle-icon {
+  position: relative;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  box-shadow: inset -7px -4px 0 0 currentColor;
+}
+
+[data-theme="dark"] .theme-toggle-icon {
+  width: 14px;
+  height: 14px;
+  background: currentColor;
+  box-shadow: none;
+}
+
+[data-theme="dark"] .theme-toggle-icon::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  opacity: 0.55;
 }
 
 .nav-toggle {
@@ -320,7 +413,7 @@ h3 {
 
 .button-primary {
   background: var(--teal);
-  color: var(--ink-strong);
+  color: var(--accent-contrast);
 }
 
 .button-primary:hover,
@@ -441,7 +534,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
-  box-shadow: 0 12px 34px rgba(16, 32, 37, 0.06);
+  box-shadow: var(--card-shadow);
 }
 
 .card {
@@ -624,7 +717,7 @@ h3 {
   width: min(100% - 48px, var(--max-width));
   margin: 0 auto 32px;
   border-radius: var(--radius);
-  background: var(--ink);
+  background: var(--contact-bg);
   color: #fff;
   padding: 48px;
 }
